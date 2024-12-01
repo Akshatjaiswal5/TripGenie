@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js" type="module" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="header">
+        <div class="header-left">
+          <img src="../images/travel-bag.png" alt="Travel bag icon" class="header-image">
+          <label id="place-name"></label>
+        </div>
+        <button id="button-reset" class="secondary">Reset</button>
+      </div>
+
+      <!-- Welcome page -->
+      <div id="welcome">
+        <label id="place-name"></label> 
+        <label>Places to visit</label>
+        <select id="days">
+          <option value="">Select number of days</option>
+          <option value="1" selected>1 day</option>
+          <option value="2">2 days</option>
+          <option value="3">3 days</option>
+          <option value="4">4 days</option>
+          <option value="5">5 days</option>
+          <option value="6">6 days</option>
+          <option value="7">7 days</option>
+        </select>
+        <ul id="places-list"></ul>
+        <label for="additional-requirements">Additional Requirements:</label>
+        <textarea 
+          id="additional-requirements" 
+          placeholder="E.g., prefer outdoor activities, need wheelchair access, etc."
+          rows="2">
+        </textarea>
+        <button id="button-generate" class="primary">Generate itinerary</button>
+      </div>  
+
+      <!-- Loading modal -->
+      <div id="loading">
+        <div id="loading-modal">
+          <img id="loading-image" src="../images/travel-bag.png" alt="Loading...">
+          <p id="loading-message"></p>
+        </div>
+      </div>
+
+      <!-- Itinerary page -->
+      <div id="itinerary">
+        <div id="itinerary-content" class="text"></div>
+        <div id="itinerary-options">
+          <input id="input-modify-itinerary" type="text" placeholder="Suggest changes to the itinerary"></input>
+          <button id="button-modify-itinerary" class="primary">Modify itinerary</button>
+          <button id="button-download" class="primary">Download PDF</button>
+          <select id="language">
+            <option value="en" selected>English</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+      </div>
+    
+      <!-- Error page -->
+      <div id="error">
+        <div id="error-modal">
+          <p id="error-message"></p>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

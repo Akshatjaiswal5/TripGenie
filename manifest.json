@@ -1,0 +1,46 @@
+{
+  "name": "TripGenie",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "A smart way to plan your trips, directly through google maps.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["sidePanel", "aiLanguageModelOriginTrial", "tabs", "downloads"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvf0O/bR3JULoj6dOpG7sDif4BNVgootUIfSybh2a7jX47BglfZFNH/aRUgDjNtcTBPinXdGbljMVIudQ7w6LiwVq9b1Ht6ZXFVtHTKOsDWtVh/rVKE/AGue9eQ7xCncHFl4zLJUaDRUIRqe5zvjHtaMr8p92I3c/6k43LmTUp1QHz0NooDJRYKRPLS77YVDX8hZc2yopIH5NIY25Ned3wxZ/NWV70GZkYqFRN+UzvMS8bJUEY23L1AMSX7YQjMThY0BCZ/MBLo8UBLs8vN11EphMpLxnBhF2Zwwj2sCPR0jn0ev8HYCtKmGx8nzOl79oK24RFIsW8YWFB2fd28fBLwIDAQAB",
+  "trial_tokens": [
+    "Aozzz6KfHYqh8q5x+Khse27nSp8YM7Tftv6XZhNO7lgYcP5uQxxBEpMfRhiFbYJV+yJl1fDNzvtao7FswtZGIgQAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vYWhpaWZrb2RnbWlmcGNnbmRja3BwaW1lY25wa3BkbGwiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"
+  ],
+  "icons": {
+    "16": "images/travel-bag.png",
+    "32": "images/travel-bag.png",
+    "48": "images/travel-bag.png",
+    "128": "images/travel-bag.png"
+  },
+  "minimum_chrome_version": "131",
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/travel-bag.png",
+      "32": "images/travel-bag.png",
+      "48": "images/travel-bag.png",
+      "128": "images/travel-bag.png"
+    },
+    "default_title": "Make a plan",
+    "web_accessible_resources": [{
+      "resources": [
+        "sidepanel/services/ai-session.js",
+        "sidepanel/services/location-service.js",
+        "sidepanel/scripts/browser-utils.js",
+        "sidepanel/scripts/pdf-exporter.js"
+      ],
+      "matches": ["<all_urls>"]
+    }],
+    "host_permissions": ["https://*"],
+    "content_security_policy": {
+      "extension_pages": "script-src https://maps.googleapis.com;"
+    }
+  }
+  }

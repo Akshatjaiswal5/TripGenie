@@ -1,0 +1,25 @@
+{
+  "name": "trip-genie",
+  "private": true,
+  "version": "0.1",
+  "description": "A smart way to plan your trips, directly through google maps.",
+  "main": "background.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs",
+    "watch": "rollup --config rollup.config.mjs --watch"
+  },
+  "keywords": [],
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "dompurify": "3.1.6",
+    "marked": "^14.1.4",
+    "rollup": "4.22.4",
+    "rollup-plugin-copy": "3.5.0",
+    "html2pdf.js": "^0.10.2"
+  },
+  "dependencies": {
+    
+  }
+}
